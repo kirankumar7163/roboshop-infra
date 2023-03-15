@@ -1,8 +1,5 @@
-module "netowrk" {
-  source = "github.com/kirankumar7163/tf-module-vpc"
-  env = var.env
-
-  for_each = var.vpc
-    cidr_block = each.value.cidr_block
+resource "null resource" "test" {
+  provisioner "local-exec" {
+    command = "echo ${var.env}"
+  }
 }
-
