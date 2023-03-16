@@ -1,5 +1,4 @@
-resource "null_resource" "test" {
-  provisioner "local-exec" {
-    command = "echo ${var.env}"
-  }
+module "network" {
+  source  = "github.com/kirankumar7163/tf-module-vpc"
+  version = "main"
 }
