@@ -15,10 +15,11 @@ subnets ={
     vpc_name = "main"
 
   }
-  web ={
+#  web ={
 
-  }
-  db = {
+#  }
+#  db = {
 
-  }
+#  }
+
 }
