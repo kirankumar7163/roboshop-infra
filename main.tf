@@ -22,3 +22,7 @@ module "subnets" {
   availability_zone = each.value.availability_zone
   name = each.value.name
 }
+
+output "vpc_id" {
+  value = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
+}
