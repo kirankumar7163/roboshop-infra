@@ -13,6 +13,7 @@ module "subnets" {
   source                = "github.com/kirankumar7163/tf-module-subnets"
   env                   = var.env
   default_vpc_id        = var.default_vpc_id
+  public_subnets_ids    = lookup(lookup(module.subnets, "public", null) "subnet_ids", null)
 
   for_each      = var.subnets
   cidr_block    = each.value.cidr_block
