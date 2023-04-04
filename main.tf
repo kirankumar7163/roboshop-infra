@@ -15,6 +15,7 @@ module "subnets" {
   default_vpc_id        = var.default_vpc_id
 
   vpc_id                = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
+  vpc_peering_connection_id = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_peering_connection_id", null)
 
   for_each      = var.subnets
   cidr_block    = each.value.cidr_block
