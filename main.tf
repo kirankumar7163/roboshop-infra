@@ -27,6 +27,6 @@ module "subnets" {
 
 }
 
-output "subnets_ids" {
-  value = module.subnets
-}
+#output "subnets_ids" {
+#  value = module.subnets
+#}
