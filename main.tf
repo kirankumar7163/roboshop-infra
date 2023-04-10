@@ -28,6 +28,6 @@ module "vpc" {
 #
 #}
 
-#output "subnets_ids" {
-#  value = module.subnets
-#}
+output "out" {
+  value = module.vpc
+}
