@@ -1,29 +1,31 @@
 module "vpc" {
-  source  = "github.com/kirankumar7163/tf-module-vpc"
-  env = var.env
-  default_vpc_id = var.default_vpc_id
+  source            = "github.com/kirankumar7163/tf-module-vpc"
+  env               = var.env
+  default_vpc_id    = var.default_vpc_id
+  for_each          = var.vpc
 
-  for_each = var.vpc
-  cidr_block           = each.value.cidr_block
+  cidr_block              = each.value.cidr_block
+  subnets                 = each.value.subnets
+  availability_zone       = each.value.availability_zone
 }
 
 
 
-module "subnets" {
-  source                = "github.com/kirankumar7163/tf-module-subnets"
-  env                   = var.env
-  default_vpc_id        = var.default_vpc_id
-
-  for_each                  = var.subnets
-  cidr_block                = each.value.cidr_block
-  availability_zone         = each.value.availability_zone
-  name = each.value.name
-  vpc_id                    = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
-  vpc_peering_connection_id = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_peering_connection_id", null)
-  internet_gw               = lookup(each.value, "internet_gw", false)
-  nat_gw                    = lookup(each.value, "nat_gw", false)
-
-}
+#module "subnets" {
+#  source                = "github.com/kirankumar7163/tf-module-subnets"
+#  env                   = var.env
+#  default_vpc_id        = var.default_vpc_id
+#
+#  for_each                  = var.subnets
+#  cidr_block                = each.value.cidr_block
+#  availability_zone         = each.value.availability_zone
+#  name = each.value.name
+#  vpc_id                    = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
+#  vpc_peering_connection_id = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_peering_connection_id", null)
+#  internet_gw               = lookup(each.value, "internet_gw", false)
+#  nat_gw                    = lookup(each.value, "nat_gw", false)
+#
+#}
 
 #output "subnets_ids" {
 #  value = module.subnets
