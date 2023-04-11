@@ -20,7 +20,7 @@ module "docdb" {
   allow_cidr = lookup(lookup(lookup(lookup(var.vpc, each.value.vpc_name, null), "private_subnets", null), "app", null), "cidr_block", null)
   engine_version = each.value.engine_version
   number_of_instances = each.value.number_of_instances
-  instance_class = each.value.Instance_class
+  instance_class = each.value.instance_class
 }
 
 output "vpc" {
