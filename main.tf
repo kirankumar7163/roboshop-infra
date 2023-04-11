@@ -17,7 +17,7 @@ module "docdb" {
   env               = var.env
 
   for_each          = var.docdb
-  subnets_id        = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), "private_subnet_ids", null), each.value.subnets_name, null), "subnet_ids", null)
+  subnet_ids        = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), "private_subnet_ids", null), each.value.subnets_name, null), "subnet_ids", null)
 
 }
 
