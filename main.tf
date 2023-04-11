@@ -10,8 +10,6 @@ module "vpc" {
   availability_zone       = each.value.availability_zone
 }
 
-
-
 module "docdb" {
   source = "github.com/kirankumar7163/tf-module-docdb"
   env    = var.env
