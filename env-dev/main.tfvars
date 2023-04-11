@@ -34,3 +34,11 @@ vpc ={
     }
   }
 }
+
+docdb = {
+  main = {
+    vpc_name = "main"
+    subnets_name = "db"
+
+  }
+}
