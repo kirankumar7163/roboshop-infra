@@ -5,7 +5,7 @@ vpc ={
   main = {
     cidr_block = "10.0.0.0/16"
     availability_zone = ["us-east-1a", "us-east-1b"]
-    private_subnets = {
+    private_subnet_ids = {
       web = {
         cidr_block = ["10.0.2.0/24", "10.0.3.0/24"]
         name       = "web"
@@ -25,7 +25,7 @@ vpc ={
       }
     }
 
-    public_subnets = {
+    public_subnet_ids = {
       public = {
         cidr_block  = ["10.0.0.0/24", "10.0.1.0/24"]
         name        = "public"
