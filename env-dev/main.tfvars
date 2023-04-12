@@ -50,7 +50,7 @@ rds = {
     vpc_name            = "main"
     subnets_name        = "rds"
     engine              = "mysql"
-    engine_version      = "4.0.0"
+    engine_version      = "5.7.33"
     number_of_instances = 1
     instance_class      = "db.t3.micro"
   }
