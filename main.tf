@@ -23,7 +23,7 @@ module "docdb" {
   instance_class = each.value.instance_class
 }
 
-module "rds" {
+module "RDS" {
   source = "github.com/kirankumar7163/tf-module-RDS"
   env    = var.env
 
