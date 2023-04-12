@@ -42,7 +42,7 @@ module "elasticache" {
   env    = var.env
 
   for_each                = var.elasticache
-  subnet_ids              = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), "private_subnet_ids", null), each.value.subnets_name, null), "subnet_ids", null)
+  subnet_ids              = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), "private_subnets_ids", null), each.value.subnets_name, null), "subnet_ids", null)
   vpc_id                  = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
   allow_cidr              = lookup(lookup(lookup(lookup(var.vpc, each.value.vpc_name, null), "private_subnets", null), "app", null), "cidr_block", null)
   num_node_groups         = each.value.num_node_groups
