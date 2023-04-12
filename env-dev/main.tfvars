@@ -45,7 +45,7 @@ docdb = {
   }
 }
 
-docdb = {
+rds = {
   main = {
     vpc_name            = "main"
     subnets_name        = "rds"
