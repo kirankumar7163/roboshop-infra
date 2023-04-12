@@ -24,7 +24,7 @@ module "docdb" {
 }
 
 module "rds" {
-  source = "github.com/kirankumar7163/tf-module-docdb"
+  source = "github.com/kirankumar7163/tf-module-RDS"
   env    = var.env
 
   for_each             = var.rds
