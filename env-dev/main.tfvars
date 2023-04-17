@@ -119,7 +119,7 @@ apps = {
     allow_cidr_subnets_type = "private_subnets"
     allow_cidr_subnets_name = "app"
     max_size                = 3
-    min.size                = 1
+    min_size                = 1
     desired_capacity        = 4
     instance_type           = "t3.micro"
   }
