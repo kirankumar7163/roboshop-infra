@@ -103,7 +103,7 @@ apps = {
     subnets_type     = "private_subnets_ids"
     subnets_name     = "web"
     app_port         = 80
-    allow_cidr_subnets_types = "public_subnets"
+    allow_cidr_subnets_type = "public_subnets"
     allow_cidr_subnets_name = "public"
   }
   catalogue = {
