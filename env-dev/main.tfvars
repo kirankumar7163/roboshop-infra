@@ -98,17 +98,17 @@ alb = {
 
 apps = {
   frontend = {
-    component = "frontend"
-    vpc_name = "main"
-    subnets_type = "private_subnets_id"
-    subnets_name = "web"
-    app_port = 80
+    component        = "frontend"
+    vpc_name         = "main"
+    subnets_type     = "private_subnets_ids"
+    subnets_name     = "web"
+    app_port         = 80
   }
   catalogue = {
-    component = "catalogue"
-    vpc_name = "main"
-    subnets_type = "private_subnets_id"
-    subnets_name = "app"
-    app_port = 8080
+    component         = "catalogue"
+    vpc_name          = "main"
+    subnets_type      = "private_subnets_ids"
+    subnets_name      = "app"
+    app_port          = 8080
   }
 }
