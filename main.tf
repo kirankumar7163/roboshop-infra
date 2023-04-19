@@ -53,6 +53,7 @@ module "elasticache" {
 module "rabbitmq" {
   source = "github.com/kirankumar7163/tf-module-rabbitmq"
   env    = var.env
+  bastion_cidr = var.bastion_cidr
 
   for_each             = var.rabbitmq
   subnet_ids           = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), "private_subnets_ids", null), each.value.subnets_name, null), "subnet_ids", null)
@@ -62,6 +63,7 @@ module "rabbitmq" {
   engine_type          = each.value.engine_type
   host_instance_type   = each.value.host_instance_type
   deployment_mode      = each.value.deployment_mode
+
 }
 
 module "alb" {
