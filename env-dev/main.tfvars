@@ -63,7 +63,7 @@ elasticache = {
     subnets_name        = "db"
     engine              = "redis"
     replicas_per_node_group = 1
-    num_node_groups         = 2
+    num_node_groups         = 1
     node_type           = "cache.t3.micro"
   }
 }
