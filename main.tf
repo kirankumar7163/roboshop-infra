@@ -99,7 +99,3 @@ module "apps" {
 
 }
 
- output "rds" {
-   value = module.RDS
-   sensitive = true
- }
