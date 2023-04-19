@@ -99,6 +99,6 @@ module "apps" {
 
 }
 
- output "RDS" {
+ output "rds" {
    value = module.RDS
  }
