@@ -99,6 +99,6 @@ module "apps" {
 
 }
 
- output "redis" {
-   value = module.elasticache
+ output "RDS" {
+   value = module.RDS
  }
