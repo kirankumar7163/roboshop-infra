@@ -66,6 +66,8 @@ module "rabbitmq" {
 
 }
 
+# concat function is used for app and web subntes for available if there are any two subnets required we need to use concat function each.value.internal ? is a condition used to get values for internet and to change subntes
+
 module "alb" {
   source = "github.com/kirankumar7163/tf-module-alb"
   env    = var.env
