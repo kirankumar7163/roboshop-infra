@@ -85,20 +85,20 @@ module "apps" {
   source = "github.com/kirankumar7163/tf-module-app"
   env    = var.env
 
-  depends_on   = [module.docdb, module.RDS, module.elasticache, module.rabbitmq, module.alb]
-  for_each     = var.apps
-  subnet_ids   = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), each.value.subnets_type, null), each.value.subnets_name, null), "subnet_ids", null)
-  vpc_id       = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
-  allow_cidr   = lookup(lookup(lookup(lookup(var.vpc, each.value.vpc_name, null), each.value.allow_cidr_subnets_type, null), each.value.allow_cidr_subnets_name, null), "cidr_block", null)
-  alb          = lookup(lookup(module.alb, each.value.alb, null), "dns_name", null)
-  listener     = lookup(lookup(module.alb, each.value.alb, null), "listener", null)
-  component    = each.value.component
-  app_port     = each.value.app_port
-  max_size     = each.value.max_size
-  min_size     = each.value.min_size
-  desired_capacity = each.value.desired_capacity
-  instance_type = each.value.instance_type
-  bastion_cidr  = var.bastion_cidr
+  depends_on        = [module.docdb, module.RDS, module.elasticache, module.rabbitmq, module.alb]
+  for_each          = var.apps
+  subnet_ids        = lookup(lookup(lookup(lookup(module.vpc, each.value.vpc_name, null), each.value.subnets_type, null), each.value.subnets_name, null), "subnet_ids", null)
+  vpc_id            = lookup(lookup(module.vpc, each.value.vpc_name, null), "vpc_id", null)
+  allow_cidr        = lookup(lookup(lookup(lookup(var.vpc, each.value.vpc_name, null), each.value.allow_cidr_subnets_type, null), each.value.allow_cidr_subnets_name, null), "cidr_block", null)
+  alb               = lookup(lookup(module.alb, each.value.alb, null), "dns_name", null)
+  listener          = lookup(lookup(module.alb, each.value.alb, null), "listener", null)
+  component         = each.value.component
+  app_port          = each.value.app_port
+  max_size          = each.value.max_size
+  min_size          = each.value.min_size
+  desired_capacity  = each.value.desired_capacity
+  instance_type     = each.value.instance_type
+  bastion_cidr      = var.bastion_cidr
   listener_priority = each.value.listener_priority
 
 
