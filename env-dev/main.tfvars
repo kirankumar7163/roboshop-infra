@@ -110,6 +110,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "public"
+    listener_priority       = 0
   }
   catalogue = {
     component               = "catalogue"
@@ -124,6 +125,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 100
   }
   user = {
     component               = "user"
@@ -138,6 +140,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 101
   }
   cart = {
     component               = "cart"
@@ -152,6 +155,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 102
   }
   shipping = {
     component               = "shipping"
@@ -166,6 +170,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 103
   }
   payment = {
     component               = "payment"
@@ -180,6 +185,7 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 104
   }
   dispatch = {
     component               = "dispatch"
@@ -194,5 +200,6 @@ apps = {
     desired_capacity        = 1
     instance_type           = "t3.micro"
     alb                     = "private"
+    listener_priority       = 105
   }
 }
