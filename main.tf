@@ -104,3 +104,6 @@ module "apps" {
 
 }
 
+output "alb" {
+  value = module.alb
+}
