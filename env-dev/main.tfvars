@@ -144,7 +144,7 @@ apps = {
     listener_priority       = 101
   }
   cart = {
-    component               = "cart"
+    component               = "cart1"
     vpc_name                = "main"
     subnets_type            = "private_subnets_ids"
     subnets_name            = "app"
