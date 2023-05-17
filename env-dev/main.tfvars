@@ -143,8 +143,8 @@ apps = {
     alb                     = "private"
     listener_priority       = 101
   }
-  cart = {
-    component               = "cart"
+  CART = {
+    component               = "CART"
     vpc_name                = "main"
     subnets_type            = "private_subnets_ids"
     subnets_name            = "app"
